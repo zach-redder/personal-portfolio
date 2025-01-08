@@ -39,7 +39,7 @@ export default function Navbar() {
                 <div onClick={() => scrollToSection('home')}><img src="/zr1.png" alt='ZR'/></div>
             </div>
             <div className="nav-links">
-                <div className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</div>
+                <div className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Hme</div>
                 <div className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About</div>
                 <div className={activeSection === 'projects' ? 'active' : ''} onClick={() => scrollToSection('projects')}>Projects</div>
                 <div className={activeSection === 'company' ? 'active' : ''}onClick={() => scrollToSection('company')}>Company</div>
