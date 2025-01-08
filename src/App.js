@@ -14,10 +14,10 @@ import MainApp from "./pages/Main.js";
 function App() {
   return (
     // Router component to handle routing from pages
-    <Router claassName="router">
+    <Router className="router">
       <Routes>
         <Route path="/" element={<MainApp/>} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace/>} />
       </Routes>
     </Router>
   );

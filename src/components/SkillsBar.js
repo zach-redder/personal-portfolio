@@ -21,14 +21,6 @@ export default function SkillsBar() {
                 rect.top < windowHeight && bottomRect > 0;
 
             if (isVisible) {
-                // Calculate the percentage of the bar's visibility in the viewport
-                const visibleStart = Math.max(0, rect.top);
-                const visibleEnd = Math.min(windowHeight, bottomRect);
-                const visibleHeight = visibleEnd - visibleStart;
-                const totalHeight = rect.height;
-
-                const visibilityPercentage = visibleHeight / totalHeight;
-
                 // Determine the progress of the vertical scroll relative to the bar
                 const barStartScroll =
                     window.pageYOffset + rect.top - windowHeight;
