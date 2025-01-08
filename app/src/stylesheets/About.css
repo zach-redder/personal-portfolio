@@ -1,0 +1,24 @@
+.about-me-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.about-me-text p {
+    width: 30%;
+    font-size: large;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 225px;
+}
+
+.about-header-line {
+    width: 675px;
+    height: 1px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 90px;
+    margin-left: 50px;
+  }
+

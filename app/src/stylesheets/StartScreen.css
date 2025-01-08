@@ -1,0 +1,154 @@
+@keyframes fade-out {
+    to {opacity: 0;}
+  }
+  
+  @keyframes header-image-animation {
+    25% {opacity: 1;}
+    85%, 100% {opacity: 0; scale: 1.5;}
+  }
+  
+  @keyframes fade-in-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .beginning-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/195/1003/desktop-wallpaper-black-grey-gradient-backgrounds-for-web-black-website-background-thumbnail.jpg');
+    animation: header-image-animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+  
+  .text-section {
+    max-width: 60%;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .text-section p {
+    margin: 5px 0;
+    font-size: 24px;
+    width: 300px;
+  }
+  
+  .first-p {
+    opacity: 0;
+    animation: fade-in-from-left 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .text-section h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+    color: #898fc7;
+    opacity: 0;
+    animation: fade-in-from-left 1s ease-in-out forwards;
+    animation-delay: .85s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .second-p {
+    opacity: 0;
+    animation: fade-in-from-left .8s ease-in-out forwards;
+    animation-delay: 1.1s;
+  }
+  
+  .contact-button {
+    padding: 10px 20px;
+    background-color: #898fc7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-top: 75px;
+    color: #222222;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-from-left .75s ease-in-out forwards;
+    animation-delay: 1.25s;
+  }
+  
+  .contact-button:hover {
+    background-color: #6972c4;
+  }
+  
+  .dividing-line {
+    width: 1px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: white;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+    animation-delay: .5s;
+  }
+  
+  /* Image Section */
+  .image-section {
+    text-align: center;
+    position: relative;
+    margin-right: 150px;
+    animation: fade-in 2s ease-in-out;
+  }
+  
+  .profile-image {
+    position: relative;
+    width: 450px; /* Adjust to your desired size */
+    height: 450px;
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle properly */
+  }

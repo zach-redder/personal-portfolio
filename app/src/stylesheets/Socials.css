@@ -1,0 +1,39 @@
+.social-icons {
+    display: flex;  
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #090909;
+    padding: 20px;
+    border-radius: 20px;
+    top: 250px;
+    right: 60px;
+    z-index: 100;
+    opacity: 0;
+    animation: fade-in-from-right 1s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  
+  .social-icons a {
+    color: #ffffff;
+    font-size: 3.25rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #898fc7;
+    transform: scale(1.1);
+    animation: ease-in-out ease-in-out .5s;
+  }
+
+  @keyframes ease-in-out {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }

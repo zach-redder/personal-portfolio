@@ -1,0 +1,6 @@
+.projects-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+}
