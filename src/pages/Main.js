@@ -11,6 +11,7 @@ import "../stylesheets/StartScreen.css";
 import "../stylesheets/Skills.css";
 import "../stylesheets/Projects.css";
 import "../stylesheets/Company.css";
+import "../stylesheets/Volunteering.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -72,12 +73,21 @@ function MainPage() {
                 </div>
             </section>
 
+            <div className="volunteering">
+                <div className="volunteering-header">
+                    <div className="volunteering-header-line"/>
+                    <h2>Volunteering</h2>
+                </div>                
+            </div>
+
             <div className="skills">
                 <div className="skills-header">
-                    <div className="skills-header-line"/>
                     <h2>Skills & Tools</h2>
+                    <div className="skills-header-line"/>
                 </div>   
-                <SkillsBar></SkillsBar>
+                <SkillsBar direction="left"></SkillsBar>
+                <SkillsBar direction="right"></SkillsBar>
+                <a href="Résumé.pdf" download><i class="fa fa-download"/>Download Resume</a>
              </div>
 
             <div className="leading-line"/>

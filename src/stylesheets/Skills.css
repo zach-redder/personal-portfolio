@@ -11,16 +11,15 @@
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     margin-top: 90px;
-    margin-right: 50px;
+    margin-left: 50px;
   }
-
 
   .skills-bar {
     display: flex;
     flex-direction: row;
     margin:0 auto;
     justify-content: flex-start;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     max-width: 1000px;
     overflow-x: hidden;
     scrollbar-width: none;
@@ -30,13 +29,24 @@
     display: none;
   }
 
-  .skill {
+  .skills {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-width: 150px;
-    height: 150px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-bottom: 75px;
+  }
+
+  .skill {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 185px;
+    height: 75px;
     margin: 20px;
     border-radius: 20px;
     background-color: #090909;
@@ -46,4 +56,18 @@
 
   .skill img {
     height: 50px;
+    margin-right: 15px;
   } 
+
+  .skills a {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .skills i {
+    margin-right: 10px;
+  }
+

@@ -86,7 +86,7 @@
     animation-delay: 1.1s;
   }
   
-  .contact-button {
+  .contact-button, .skills a {
     padding: 10px 20px;
     background-color: #898fc7;
     border: none;
@@ -100,9 +100,10 @@
     opacity: 0;
     animation: fade-in-from-left .75s ease-in-out forwards;
     animation-delay: 1.25s;
+    text-decoration: none;
   }
   
-  .contact-button:hover {
+  .contact-button:hover, .skills a:hover {
     background-color: #6972c4;
   }
   

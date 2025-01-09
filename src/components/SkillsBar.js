@@ -1,58 +1,45 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function SkillsBar() {
+export default function SkillsBar({direction}) {
     const skillsBarRef = useRef(null);
+
+    console.log(direction);
 
     useEffect(() => {
         const scroller = skillsBarRef.current;
 
-        const handleScroll = () => {
+        // Clone the skills and append them to the end of the scroller
+        const skills = Array.from(scroller.children);
+        skills.forEach(skill => {
+            const clone = skill.cloneNode(true);
+            scroller.appendChild(clone);
+        });
+
+        const scrollStep = direction === 'right' ? 1 : -1; // Adjust the scroll speed as needed
+
+        const autoScroll = () => {
             if (!scroller) return;
 
-            const rect = scroller.getBoundingClientRect();
-            const windowHeight = window.innerHeight - 200;
+            const maxScrollLeft = scroller.scrollWidth / 2; // Half of the total scroll width
 
-            const bottomRect = rect.bottom - 250;
-
-            console.log(rect.top, bottomRect, windowHeight);
-
-            // Check if the skills bar is in the viewport
-            const isVisible =
-                rect.top < windowHeight && bottomRect > 0;
-
-            if (isVisible) {
-                // Determine the progress of the vertical scroll relative to the bar
-                const barStartScroll =
-                    window.pageYOffset + rect.top - windowHeight;
-                const barEndScroll = window.pageYOffset + bottomRect;
-
-                const scrollProgress = Math.min(
-                    Math.max(0, window.pageYOffset - barStartScroll) /
-                        (barEndScroll - barStartScroll),
-                    1
-                );
-
-                // Calculate the horizontal scroll position for the skills bar
-                const maxScrollLeft =
-                    scroller.scrollWidth - scroller.clientWidth;
-                const scrollLeft = scrollProgress * maxScrollLeft;
-
-                scroller.scrollTo({
-                    left: scrollLeft,
-                    behavior: "auto",
-                });
+            if (direction === 'right' && scroller.scrollLeft >= maxScrollLeft) {
+                scroller.scrollLeft = 0; // Reset to start
+            } else if (direction === 'left' && scroller.scrollLeft <= 0) {
+                scroller.scrollLeft = maxScrollLeft; // Reset to end
+            } else {
+                scroller.scrollLeft += scrollStep;
             }
+
+            requestAnimationFrame(autoScroll);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        requestAnimationFrame(autoScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+        return () => cancelAnimationFrame(autoScroll);
+    }, [direction]);
 
     return (
-        <div className="skills-bar" ref={skillsBarRef}>
+        <div className="skills-bar scroller" ref={skillsBarRef}>
             <div className="skill">
                 <img src="/react.png" alt="Skill 1" />
                 <p>React.js</p>
