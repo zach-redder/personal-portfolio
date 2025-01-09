@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -19,6 +19,28 @@ import ContactBox from "../components/ContactBox";
 import SkillsBar from "../components/SkillsBar";
 
 function MainPage() {
+
+    useEffect(() => {
+        const homeSection = document.getElementsByClassName('beginning-content')[0];
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const maxScroll = window.innerHeight;
+            const opacity = 1 - (scrollY / maxScroll);
+            const scale = 1 + (scrollY / maxScroll) * .5;
+
+            if (homeSection) {
+                homeSection.style.opacity = opacity;
+                homeSection.style.transform = `scale(${scale})`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const scrollToSection = (id) => {
         document.getElementById(id).scrollIntoView({ behavior: "smooth" });
