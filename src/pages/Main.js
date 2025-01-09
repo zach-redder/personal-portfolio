@@ -43,7 +43,7 @@ function MainPage() {
                     
                 </div>
                 <div className="social-icons">
-                    <a href="https://github.com" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">
                         <i className="fab fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/zachredder/" target="_blank" rel="noreferrer">
