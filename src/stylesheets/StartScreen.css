@@ -25,6 +25,9 @@
     padding: 0 5%;
     height: 100vh;
     background-size: cover;
+    animation: header-image-animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
     background-image: url('https://e1.pxfuel.com/desktop-wallpaper/195/1003/desktop-wallpaper-black-grey-gradient-backgrounds-for-web-black-website-background-thumbnail.jpg');
   }
   
