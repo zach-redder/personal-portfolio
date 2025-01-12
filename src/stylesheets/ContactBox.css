@@ -17,7 +17,7 @@ form {
     height: 525px;
     margin: 0 auto;
     padding: 1rem;
-    background-color: #090909;
+    background-color: #191919;
     border-radius: 50px;
     box-shadow: 0 0 15px 0px #898fc7;
     margin-bottom: 50px;
@@ -35,7 +35,7 @@ input, textarea {
     padding: 1rem;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: #1a1a1a;
+    background-color: #101010;
     color: #ffffff;
     font-size: 1rem;
     box-sizing: border-box;
@@ -54,7 +54,7 @@ input, textarea {
   input:focus, textarea:focus {
     outline: none;
     border-color: #898fc7;
-    background-color: #101010;
+    background-color: #090909;
   }
 
   

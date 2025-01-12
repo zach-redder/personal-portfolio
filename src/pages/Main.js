@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import { SlideInSection, FadeInSection } from "../functions";
+
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import "../stylesheets/Main.css";
@@ -17,6 +19,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactBox from "../components/ContactBox";
 import SkillsBar from "../components/SkillsBar";
+import ProjectCard from "../components/ProjectCard";
 
 function MainPage() {
 
@@ -27,7 +30,7 @@ function MainPage() {
             const scrollY = window.scrollY;
             const maxScroll = window.innerHeight;
             const opacity = 1 - (scrollY / maxScroll);
-            const scale = 1 + (scrollY / maxScroll) * .5;
+            const scale = 1 + (scrollY / maxScroll) * 1;
 
             if (homeSection) {
                 homeSection.style.opacity = opacity;
@@ -79,45 +82,71 @@ function MainPage() {
             </section>
             
             <section id="about">
-                <div className="about-me-header">
-                    <h2>About Me</h2>
-                    <div className="about-header-line"/>
-                </div>
-                <div className="about-me-text">
-                    <p>
-                        I am an American software developer, entrepreneur, creator, and philosopher.
-                    </p>
-                    <p>
-                        I have a passion for creating and building systems, whether it be a new
-                        software project, a business, or a new idea. I am always looking to learn
-                        and grow, and I am constantly seeking new challenges and opportunities.
-                    </p>
-                </div>
+                <SlideInSection>
+                    <div className="about-me-header">
+                        <h2>About Me</h2>
+                        <div className="about-header-line"/>
+                    </div>
+                </SlideInSection>
+                <FadeInSection>
+                    <div className="about-me-text">
+                        <p>
+                            I am an American software developer, entrepreneur, creator, and philosopher.
+                        </p>
+                        <p>
+                            I study Computer Science and Philosophy at Calvin University, combining
+                            technical skills with critical thinking. My passion for technology increased
+                            during high school robotics, where building and programming robots inspired
+                            me to explore how systems work and their broader implications.
+                        </p>
+                        <p>
+                            I have a passion for creating and building systems, whether it be a new
+                            software project, a business, or a new idea. I am always looking to learn
+                            and grow, and I am constantly seeking new challenges and opportunities.
+                        </p>
+                    </div>
+                </FadeInSection>
             </section>
 
             <div className="volunteering">
-                <div className="volunteering-header">
-                    <div className="volunteering-header-line"/>
-                    <h2>Volunteering</h2>
-                </div>                
+                <SlideInSection>
+                    <div className="volunteering-header">
+                        <div className="volunteering-header-line"/>
+                        <h2>Volunteering</h2>
+                    </div>                
+                </SlideInSection>
             </div>
 
             <div className="skills">
-                <div className="skills-header">
-                    <h2>Skills & Tools</h2>
-                    <div className="skills-header-line"/>
-                </div>   
-                <SkillsBar direction="left"></SkillsBar>
-                <SkillsBar direction="right"></SkillsBar>
-                <a href="Résumé.pdf" download><i class="fa fa-download"/>Download Resume</a>
+                <SlideInSection>
+                    <div className="skills-header">
+                        <h2>Skills & Tools</h2>
+                        <div className="skills-header-line"/>
+                    </div>
+                </SlideInSection>
+                <FadeInSection>
+                    <SkillsBar direction="left"></SkillsBar>
+                    <SkillsBar direction="right"></SkillsBar>
+                    <a href="Zach_Redder_Résumé.pdf" download><i class="fa fa-download"/>Download Resume</a>
+                </FadeInSection>
              </div>
 
             <div className="leading-line"/>
 
             <section id="projects">
-                <div className="projects-header">
-                    <h2>Projects</h2>
-                </div>
+                <SlideInSection>
+                    <div className="projects-header">
+                        <h2>Projects</h2>
+                    </div>
+                </SlideInSection>
+                <FadeInSection>
+                    <div classname="projects-container">
+                        <ProjectCard projectDescription={''} projectName={'Vigil - Workout Organizer'} projectLogo={'/Weight.png'} techStack={['React Native', 'Azure', 'PostgreSQL', 'Expo']}></ProjectCard>
+                        <ProjectCard projectDescription={''} projectName={'Sprout - Stock Trader'} projectLogo={'https://cs336-stock-market-project.web.app/SproutLogo.png'} techStack={['React.js', 'Firestore', 'Firebase Hosting']}></ProjectCard>
+                        <ProjectCard projectDescription={''} projectName={'Personal Portfolio'} projectLogo={'/zr2.png'} techStack={['React.js', 'Github Pages']}></ProjectCard>
+                    </div>
+                </FadeInSection>
+
 
                 <div className="leading-line"/>
                 
