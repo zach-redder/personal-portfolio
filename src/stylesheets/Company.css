@@ -4,3 +4,9 @@
     justify-content: center;
     padding-top: 40px;
 }
+
+.company-text p {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5%;
+}

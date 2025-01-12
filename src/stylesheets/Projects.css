@@ -25,7 +25,6 @@
     width: 67.5%; /* Adjusted width to fit within the container */
     height: 200px; /* Increased height to make the project card larger */
     margin-bottom: 5%;
-    border: 1px solid #444; /* Match the border color with the rest of the webpage */
     border-radius: 10px; /* Match the border radius with the rest of the webpage */
     overflow: hidden;
     justify-content: center;
@@ -57,7 +56,7 @@
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    transition: opacity 0.3s ease;
+    transition: transform .3s ease-in-out, opacity 0.3s ease;
   }
   
   .project-card-front {
@@ -71,12 +70,14 @@
   .project-card-back {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff; /* Match the text color with the rest of the webpage */
+    transform: translateY(100%);
     opacity: 0;
     z-index: 2; /* Ensure the back is above the front when hovered */
   }
   
   .project-card:hover .project-card-back {
     opacity: 1;
+    transform: translateY(0);
   }
   
   .project-card:hover .project-card-front {

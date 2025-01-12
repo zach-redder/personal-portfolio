@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 
 import { useForm } from "react-hook-form";
 
+import { storeFormData } from '../functions/firebaseFunctions';
+
 import '../stylesheets/ContactBox.css';
 
 export default function ContactBox() {
@@ -9,13 +11,16 @@ export default function ContactBox() {
     const { 
         register, 
         handleSubmit, 
-        getValues, 
+        getValues,
         formState: { errors }, 
-      } = useForm(); 
+    } = useForm(); 
     
-      const onSubmit = useCallback(() => { 
-        console.log(getValues()); 
-      }, [getValues]); 
+    const onSubmit = useCallback(() => { 
+        const { firstname, email, message } = getValues();
+        console.log(firstname, email, message);
+        storeFormData(firstname, email, message);
+    }, [getValues]); 
+
 
     return (
         <div className='contact-container'>

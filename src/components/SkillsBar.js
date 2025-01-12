@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 export default function SkillsBar({direction}) {
     const skillsBarRef = useRef(null);
-
-    console.log(direction);
-
+    
     useEffect(() => {
         const scroller = skillsBarRef.current;
 

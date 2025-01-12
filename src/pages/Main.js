@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { SlideInSection, FadeInSection } from "../functions";
+import { SlideInSection, FadeInSection } from "../functions/normalFunctions";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -66,7 +66,7 @@ function MainPage() {
                             <img src="/profile_pic.jpg" alt="Zach Redder" />
                         </div>
                     </div>
-                    
+    
                 </div>
                 <div className="social-icons">
                     <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">
@@ -115,6 +115,26 @@ function MainPage() {
                         <h2>Volunteering</h2>
                     </div>                
                 </SlideInSection>
+                <FadeInSection>
+                    <div className="volunteering-body">
+                        <div class="volunteering-image-wrapper">
+                            <div className="volunteering-image">
+                                <img src="https://i2.wp.com/evadotravel.com/wp-content/uploads/2019/01/CoP01BxTn6VTyLO1juTcQ.jpg?fit=1024%2C768&ssl=1" alt="Costa Rica"/>
+                            </div>
+                        </div>
+                        <div className="volunteering-text">
+                            <p>
+                                I had the incredible opportunity to travel to Costa Rica with my church,
+                                where we worked to support the local community through service projects.
+                                During the trip, I lived with a local family, immersing myself in their
+                                culture, the natural beauty of the forest's, and daily life. This experience was both humbling and inspiring,
+                                giving me a deeper appreciation for community, resilience, and the beauty
+                                of cultural exchange. It reinforced my belief in the importance of serving
+                                others and broadened my perspective on the world.
+                            </p>
+                        </div>
+                    </div>
+                </FadeInSection>
             </div>
 
             <div className="skills">
@@ -141,30 +161,56 @@ function MainPage() {
                 </SlideInSection>
                 <FadeInSection>
                     <div classname="projects-container">
-                        <ProjectCard projectDescription={''} projectName={'Vigil - Workout Organizer'} projectLogo={'/Weight.png'} techStack={['React Native', 'Azure', 'PostgreSQL', 'Expo']}></ProjectCard>
-                        <ProjectCard projectDescription={''} projectName={'Sprout - Stock Trader'} projectLogo={'https://cs336-stock-market-project.web.app/SproutLogo.png'} techStack={['React.js', 'Firestore', 'Firebase Hosting']}></ProjectCard>
-                        <ProjectCard projectDescription={''} projectName={'Personal Portfolio'} projectLogo={'/zr2.png'} techStack={['React.js', 'Github Pages']}></ProjectCard>
+                        <ProjectCard
+                            projectDescription={'A mobile application used as a seamless workout organizer. Built alongside 5 others, our goal was to blend effective workouts with interactive recovery, ensuring that users maximize their time at the gym and stay motivated throughout their fitness journey. This was created using React Native with Typescript, HTML, and CSS for my Software Engineering course at Calvin University.'}
+                            projectName={'Vigil - Workout Organizer'}
+                            projectLogo={'/Weight.png'}
+                            techStack={['React Native', 'Azure', 'PostgreSQL', 'Expo']}
+                            link={'https://github.com/calvin-cs262-fall2024-no-pain-no-main/no-pain-no-main-client'}>
+                        </ProjectCard>
+                        <ProjectCard
+                            projectDescription={'A webpage designed to display stock data and allow users to buy and sell stocks with fake money. Used a cloud function to update stock data with real time information. This was developed alonside 3 others using React.js, Firestore, and Firebase Hosting for my Web Development course at Calvin University.'}
+                            projectName={'Sprout - Stock Trader'}
+                            projectLogo={'https://cs336-stock-market-project.web.app/SproutLogo.png'}
+                            techStack={['React.js', 'Firestore', 'Firebase Hosting']}
+                            link={'https://github.com/calvin-cs336-finalproject/sprout-client'}>
+                        </ProjectCard>
+                        <ProjectCard 
+                            projectDescription={'A webpage designed to house information about myself and my projects, providing easy access to my professional work. This was created using React.js and Github Pages as a personal project.'}
+                            projectName={'Personal Portfolio'}
+                            projectLogo={'/zr2.png'}
+                            techStack={['React.js', 'Firestore', 'Github Pages']}
+                            link={'https://github.com/zach-redder/personal-portfolio'}>
+                        </ProjectCard>
                     </div>
                 </FadeInSection>
-
 
                 <div className="leading-line"/>
                 
             </section>
             
             <section id="company">
-                <div className="company-header">
-                    <h2>Scripted Evolution</h2>
-                </div>
+                <SlideInSection>
+                    <div className="company-header">
+                        <h2>Scripted Evolution</h2>
+                    </div>
+                </SlideInSection>
+                <FadeInSection>
+                    <div className="company-text">
+                        <p>
+                            Info coming soon...
+                        </p>
+                    </div>
+                </FadeInSection> 
 
                 <div className="leading-line"/>
                 
             </section> 
 
-            
-
             <section id="contact">
-                <ContactBox></ContactBox>
+                <FadeInSection>
+                    <ContactBox></ContactBox>
+                </FadeInSection>
             </section>
             <Footer></Footer>
         </div>

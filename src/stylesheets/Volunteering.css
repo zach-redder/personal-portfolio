@@ -1,15 +1,35 @@
 .volunteering-header-line {
-    width: 570px;
+    width: 39%;
     height: 1px;
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
-    margin-top: 90px;
-    margin-right: 50px;
+    margin-top: 6%;
+    margin-right: 3.5%;
 }
 
 .volunteering-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 40px;
+}
+
+.volunteering-text p {
+    width: 35%;
+    font-size: large;
+    text-align: right;
+    margin-left: 46%;
+}
+
+.volunteering-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.volunteering-image img {
+    text-align: right;
+    width: 180%;
+    margin-top: 5%;
+    margin-left: 87%;
+    border-radius: 20px;
 }
