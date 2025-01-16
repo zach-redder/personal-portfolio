@@ -10,7 +10,7 @@
     font-size: large;
     text-align: left;
     margin-top: 1%;
-    margin-left: 225px;
+    margin-left: 15.5%;
 }
 
 .about-header-line {
@@ -26,7 +26,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(20vh);
-    transition: opacity 3s ease-out, transform 1s ease-out;
+    transition: opacity 2s ease-out, transform .5s ease-out;
     will-change: opacity, visibility;
   }
   .slide-in-section.is-visible {
@@ -38,7 +38,7 @@
   .fade-in-section {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 3s ease-out;
+    transition: opacity 2s ease-out;
     will-change: opacity, visibility;
   }
   .fade-in-section.is-visible {

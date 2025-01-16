@@ -7,8 +7,8 @@
     align-items: center;
     background-color: #090909;
     position: fixed;
-    z-index: 100;
     animation: fade-in-from-top 1s ease-in-out;
+    z-index: 1000;
   }
   
   @keyframes fade-in-from-top {
@@ -68,4 +68,80 @@
     color: #090909;
     background-color: #898fc7;
     border-radius: 5px;
+  }
+
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 24px;
+    margin-right: 100px;
+    z-index: 1001;
+  }
+
+  .hamburger-menu div {
+    width: 100%;
+    border-radius: 50px;
+    height: 3px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger-menu.open .bar1 {
+    transform: rotate(-225deg) translate(8px, -7px);
+  }
+  
+  .hamburger-menu.open .bar2 {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.open .bar3 {
+    transform: rotate(225deg) translate(8px, 7px);
+  }
+
+  @keyframes slide-from-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      background-color: #191919;
+      border-radius: 5px;
+      width: 30%;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 580px;
+      padding-top: 10%;
+      height: 100vh;
+      animation: slide-from-right ease-in-out .3s;
+    }
+
+    .nav-links div {
+      margin: 6%;
+      padding: 6%;
+    }
+
+    .navbar  {
+      left: 0;
+      top: 0;
+    }
+  
+    .nav-links.open {
+      display: flex;
+      
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
   }

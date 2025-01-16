@@ -37,3 +37,33 @@
       transform: scale(1.1);
     }
   }
+
+  .navbar-social-icons {
+    display: none;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.navbar-social-icons a {
+    color: #fff;
+    font-size: 48px;
+    transition: color 0.3s ease;
+}
+
+.navbar-social-icons a:hover {
+    color: #898fc7;
+    transform: scale(1.1);
+    animation: ease-in-out 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons {
+      display: none;
+    }
+
+    .navbar-social-icons {
+        margin-top: 180%;
+        display: flex;
+    }
+  }
