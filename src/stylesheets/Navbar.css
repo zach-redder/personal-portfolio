@@ -53,7 +53,7 @@
   }
   
   .nav-links {
-   margin-right: 13%;
+   margin-right: 200px;
    display: flex;
   }
   
@@ -75,9 +75,9 @@
     cursor: pointer;
     flex-direction: column;
     justify-content: space-around;
-    width: 32px;
+    min-width: 32px;
     height: 24px;
-    margin-right: 100px;
+    margin-right: 20px;
     z-index: 1001;
   }
 
@@ -116,19 +116,21 @@
       display: none;
       background-color: #191919;
       border-radius: 5px;
-      width: 30%;
+      width: 40%;
       flex-direction: column;
       position: absolute;
       top: 0;
-      left: 580px;
+      right: 0;
+      margin: auto;
       padding-top: 10%;
       height: 100vh;
       animation: slide-from-right ease-in-out .3s;
+      border: 2px solid #090909;  
     }
 
     .nav-links div {
-      margin: 6%;
-      padding: 6%;
+      margin: 5%;
+      padding: 5%;
     }
 
     .navbar  {

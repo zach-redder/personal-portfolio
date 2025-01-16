@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 4%;
+    padding-top: 50px;
 }
 
 .about-me-text p {
@@ -45,4 +45,13 @@
     opacity: 1;
     transform: none;
     visibility: visible;
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-me-text p {
+        width: 70%;
+        font-size: large;
+        text-align: left;
+        margin-top: 1%;
+    }
   }

@@ -17,10 +17,10 @@
   .skills-bar {
     display: flex;
     flex-direction: row;
-    margin:0 auto;
+    margin: 0 auto;
     justify-content: flex-start;
     margin-bottom: 20px;
-    max-width: 1000px;
+    width: 13%;
     overflow-x: hidden;
     scrollbar-width: none;
   }
@@ -36,7 +36,6 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 1000px;
     margin-bottom: 75px;
   }
 
@@ -47,7 +46,7 @@
     align-items: center;
     min-width: 185px;
     height: 75px;
-    margin: 20px;
+    margin: 2%;
     border-radius: 20px;
     background-color: #090909;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -61,15 +60,14 @@
 
   .skills a {
     display: flex;
-    width: 25%;
+    width: 4%;
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 2%;
-    padding: 1.5%;
+    margin-top: 1%;
+    padding: .3%;
   }
 
   .skills i {
     margin-right: 3%;
   }
-

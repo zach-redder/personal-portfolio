@@ -33,3 +33,27 @@
     margin-left: 87%;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .volunteering-text p {
+        width: 70%;
+        font-size: large;
+        text-align: left;
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+
+    .volunteering-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .volunteering-image img {
+        width: 55%;
+        border-radius: 20px;
+        margin-left: 22%;
+    }
+    
+  }

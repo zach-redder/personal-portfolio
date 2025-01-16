@@ -148,3 +148,42 @@
     height: 100%;
     object-fit: cover; /* Ensures the image fills the circle properly */
   }
+
+  @media screen and (max-width: 768px) {
+    .beginning-content {
+      height: 100vh;
+    }
+  
+    .text-section {
+      max-width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 10%;
+    }
+  
+    .text-section h1 {
+      font-size: 2.5rem;
+      width: 100%;
+      margin-bottom: 5%;
+    }
+  
+    .text-section p {
+      width: 100%;
+    }
+
+    .contact-button {
+      margin: auto;
+      margin-top: 15%;
+      margin-bottom: 20%;
+    }
+    
+  }
+
+  @media screen and (max-width: 1000px) {
+    .dividing-line {
+      display: none;
+    }
+    .profile-image {
+      display: none;
+    }
+  }
