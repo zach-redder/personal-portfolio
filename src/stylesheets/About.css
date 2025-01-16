@@ -55,3 +55,9 @@
         margin-top: 1%;
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .about-header-line {
+      margin-top: 12%;
+    }
+  }

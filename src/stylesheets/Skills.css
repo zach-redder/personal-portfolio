@@ -71,3 +71,9 @@
   .skills i {
     margin-right: 3%;
   }
+
+  @media screen and (max-width: 425px) {
+    .skills-header-line {
+      margin-top: 12%;
+    }
+  }
