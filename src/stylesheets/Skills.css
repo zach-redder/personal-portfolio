@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     padding-top: 40px;
-}
+  }
 
 .skills-header-line {
     width: 570px;
@@ -20,7 +20,7 @@
     margin: 0 auto;
     justify-content: flex-start;
     margin-bottom: 20px;
-    width: 13%;
+    width: 68%;
     overflow-x: hidden;
     scrollbar-width: none;
   }
@@ -60,12 +60,13 @@
 
   .skills a {
     display: flex;
-    width: 4%;
+    width: 22%;
+    margin: auto;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    margin-top: 1%;
-    padding: .3%;
+    margin-top: 4%;
+    
+    padding: 1.5%;
   }
 
   .skills i {
@@ -76,4 +77,5 @@
     .skills-header-line {
       margin-top: 12%;
     }
+
   }

@@ -29,8 +29,8 @@ function MainPage() {
         const handleScroll = () => {
             const scrollY = window.scrollY;
             const maxScroll = window.innerHeight;
-            const opacity = 1 - (scrollY / maxScroll);
-            const scale = 1 + (scrollY / maxScroll) * 1;
+            const opacity = Math.max(0, 1 - (scrollY / maxScroll));
+            const scale = Math.min(2, 1 + (scrollY / maxScroll) * .75);
 
             if (homeSection) {
                 homeSection.style.opacity = opacity;
