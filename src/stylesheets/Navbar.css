@@ -116,13 +116,13 @@
       display: none;
       background-color: #191919;
       border-radius: 5px;
-      width: 40%;
+      width: 50%;
       flex-direction: column;
       position: absolute;
       top: 0;
       right: 0;
       margin: auto;
-      padding-top: 10%;
+      padding-top: 50px;
       height: 100vh;
       animation: slide-from-right ease-in-out .3s;
       border: 2px solid #090909;  
@@ -130,7 +130,7 @@
 
     .nav-links div {
       margin: 5%;
-      padding: 5%;
+      padding: 4%;
     }
 
     .navbar  {

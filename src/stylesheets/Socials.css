@@ -42,7 +42,7 @@
     display: none;
     justify-content: center;
     gap: 25px;
-    margin-top: 10px;
+    bottom: 0;
 }
 
 .navbar-social-icons a {

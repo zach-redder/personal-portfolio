@@ -19,7 +19,7 @@ form {
     background-color: #191919;
     border-radius: 50px;
     box-shadow: 0 0 15px 0px #898fc7;
-    margin-bottom: 3.5%;
+    margin-bottom: 10%;
     margin-top: 60px;
 }
 
@@ -101,4 +101,9 @@ input, textarea {
     textarea {
       height: 10%;
     }
+
+    .contact-container {
+      width: 85%;
+    }
+
   }
