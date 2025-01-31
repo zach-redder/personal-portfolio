@@ -116,7 +116,7 @@
       display: none;
       background-color: #191919;
       border-radius: 5px;
-      width: 50%;
+      width: 75%;
       flex-direction: column;
       position: absolute;
       top: 0;
@@ -129,7 +129,7 @@
     }
 
     .nav-links div {
-      margin: 5%;
+      margin: 15px;
       padding: 4%;
     }
 
