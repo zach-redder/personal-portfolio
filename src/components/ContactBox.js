@@ -21,7 +21,6 @@ export default function ContactBox() {
         storeFormData(firstname, email, message);
     }, [getValues]); 
 
-
     return (
         <div className='contact-container'>
             <h2>Get in Touch</h2> 
