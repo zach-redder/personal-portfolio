@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
 
-    const [activeSection, setActiveSection] = useState('');
+    const [activeSection, setActiveSection] = useState('home');
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -13,32 +13,40 @@ export default function Navbar() {
     }
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section');
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: .5, 
-        };
+        if (location.pathname === '/') {
+            setActiveSection('home');
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id); // Update active section
+        const sections = document.querySelectorAll('section[id]');
+        const navCheck = () => {
+            const scrollPos = window.scrollY;
+            
+            if (scrollPos < 100) {
+                setActiveSection('home');
+                return;
+            }
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    setActiveSection(section.getAttribute('id'));
                 }
             });
-        }, options);
-
-        sections.forEach((section) => observer.observe(section));
-
-        return () => {
-            sections.forEach((section) => observer.unobserve(section));
         };
-    }, []);
+
+        window.addEventListener('scroll', navCheck);
+        navCheck();
+        
+        return () => {
+            window.removeEventListener('scroll', navCheck);
+        };
+    }, [location.pathname]);
 
     const scrollToSection = (id) => {
         setMenuOpen(false);
         
-        // If we're on the newsletter page, navigate to main page first
         if (location.pathname === "/newsletter") {
             navigate("/", { state: { scrollTo: id } });
         } else {
@@ -46,7 +54,6 @@ export default function Navbar() {
         }
     }
 
-    // Handle scroll after navigation from newsletter
     useEffect(() => {
         if (location.state?.scrollTo) {
             const element = document.getElementById(location.state.scrollTo);
@@ -71,7 +78,7 @@ export default function Navbar() {
                     <div className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</div>
                     <div className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About</div>
                     <div className={activeSection === 'projects' ? 'active' : ''} onClick={() => scrollToSection('projects')}>Projects</div>
-                    <div className={activeSection === 'startups' ? 'active' : ''}onClick={() => scrollToSection('startups')}>Startups</div>
+                    <div className={activeSection === 'startups' ? 'active' : ''} onClick={() => scrollToSection('startups')}>Startups</div>
                     <div className={activeSection === 'contact' ? 'active' : ''} onClick={() => scrollToSection('contact')}>Contact</div>
                     <div className="navbar-social-icons">
                     <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">
