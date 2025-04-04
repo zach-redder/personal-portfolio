@@ -50,5 +50,144 @@ h2 {
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
+  margin-top: initial;
+  margin-bottom: initial;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #898fc7;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-button:hover {
+    background-color: #6972c4;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Common width for all main content sections */
+.section-content-width {
+    width: 80%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure the section header has the same width as content */
+.section-header-common {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Section headers keep uppercase styling for visual hierarchy */
+.section-header-common h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+.section-header-common h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    font-size: 5rem;
+    color: rgba(137, 143, 199, 0.1);
+    letter-spacing: 3px;
+    z-index: -1;
+}
+
+.section-header-line {
+    width: 80px;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #898fc7, #6972c4);
+    margin-top: 10px;
+    position: relative;
+}
+
+.section-header-line::before,
+.section-header-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 3px;
+    background-color: #090909;
+}
+
+.section-header-line::before {
+    left: -40px;
+}
+
+.section-header-line::after {
+    right: -40px;
+}
+
+@media screen and (max-width: 768px) {
+    .section-header-common h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-header-common h2::before {
+        font-size: 4rem;
+        top: -10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .section-header-common h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header-common h2::before {
+        font-size: 3.2rem;
+        top: -8px;
+        left: -5px;
+    }
+    
+    .section-header-line {
+        width: 60px;
+    }
+    
+    .section-header-line::before {
+        left: -30px;
+        width: 20px;
+    }
+    
+    .section-header-line::after {
+        right: -30px;
+        width: 20px;
+    }
+}
+
+/* Remove the extra spacing between sections */
+section {
+    margin-top: initial;
+}
+
+.skills {
+    margin-top: 60px;
 }
 

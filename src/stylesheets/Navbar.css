@@ -1,76 +1,77 @@
 /* Navbar */
 .navbar {
-    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 10%;
-    width: 100%;
+    background-color: #090909;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #090909;
-    position: fixed;
-    animation: fade-in-from-top 1s ease-in-out;
+    padding: 0 20px;
     z-index: 1000;
-  }
-  
-  @keyframes fade-in-from-top {
-    from {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .navbar .logo img {
-    width: 12%;
+.navbar .logo {
+    display: flex;
     align-items: center;
-    margin-left: 6%;
-    justify-content: center;
-    cursor: pointer;
-  }
+}
 
-  .navbar .logo img:hover {
+.navbar .logo img {
+    width: 60px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.navbar .logo img:hover {
     transform: scale(1.1);
     animation: ease-in-out ease-in-out 0.5s;
-  }
+}
 
-  @keyframes ease-in-out {
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+@keyframes ease-in-out {
     from {
-      transform: scale(1);
+        transform: scale(1);
     }
     to {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
-  }
-  
-  .nav-links div {
-    padding: 1.8% 5%;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 200px;
+}
+
+.nav-links div {
+    padding: 2% 5%;
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     font-size: 1.1rem;
-  }
-  
-  .nav-links {
-   margin-right: 200px;
-   display: flex;
-  }
-  
-  .nav-links div:hover {
+}
+
+.nav-links div:hover {
     cursor: pointer;
     color: lightgray;
     transform: scale(1.1);
     animation: ease-in-out ease-in-out 0.5s;
-  }
-  
-  .nav-links div.active {
-    color: #090909;
-    background-color: #898fc7;
-    border-radius: 5px;
-  }
+}
 
-  .hamburger-menu {
+.nav-links div.active {
+    border: 2px solid #898fc7;
+    border-radius: 5px;
+}
+
+.hamburger-menu {
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -79,71 +80,180 @@
     height: 24px;
     margin-right: 20px;
     z-index: 1001;
-  }
+}
 
-  .hamburger-menu div {
+.hamburger-menu div {
     width: 100%;
     border-radius: 50px;
     height: 3px;
     margin-bottom: 8px;
     background-color: #fff;
     transition: all 0.3s ease;
-  }
-  
-  .hamburger-menu.open .bar1 {
-    transform: rotate(-225deg) translate(8px, -7px);
-  }
-  
-  .hamburger-menu.open .bar2 {
-    opacity: 0;
-  }
-  
-  .hamburger-menu.open .bar3 {
-    transform: rotate(225deg) translate(8px, 7px);
-  }
+}
 
-  @keyframes slide-from-right {
+.hamburger-menu.open .bar1 {
+    transform: rotate(-225deg) translate(8px, -7px);
+}
+
+.hamburger-menu.open .bar2 {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar3 {
+    transform: rotate(225deg) translate(8px, 7px);
+}
+
+@keyframes slide-from-right {
     from {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
     to {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .nav-links {
-      display: none;
-      background-color: #191919;
-      border-radius: 5px;
-      width: 75%;
-      flex-direction: column;
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: auto;
-      padding-top: 50px;
-      height: 100vh;
-      animation: slide-from-right ease-in-out .3s;
-      border: 2px solid #090909;  
+        display: none;
+        background-color: #191919;
+        border-radius: 5px;
+        width: 85%;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: auto;
+        padding-top: 80px;
+        height: 100vh;
+        animation: slide-from-right ease-in-out .3s;
+        border: 2px solid #090909;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #898fc7, #6972c4);
     }
 
     .nav-links div {
-      margin: 15px;
-      padding: 4%;
+        margin: 10px 20px;
+        padding: 12px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
     }
 
-    .navbar  {
-      left: 0;
-      top: 0;
+    .nav-links div:hover {
+        background-color: #151515;
+        transform: none;
     }
-  
+
+    .nav-links div.active {
+        background-color: #151515;
+        border: 1px solid #898fc7;
+    }
+
+    .navbar {
+        left: 0;
+        top: 0;
+        justify-content: space-between;
+    }
+
     .nav-links.open {
-      display: flex;
-      
+        display: flex;
     }
-  
+
     .hamburger-menu {
-      display: block;
+        display: block;
+        margin-right: 20px;
     }
-  }
+
+    .vertical-line {
+        display: none;
+    }
+
+
+    .navbar-social-icons {
+        margin-top: 20px;
+        padding: 20px;
+        border-top: 1px solid #151515;
+    }
+
+    .navbar-social-icons a {
+        font-size: 24px;
+    }
+
+    .mobile-newsletter-button {
+        display: none;
+    }
+
+    .mobile-newsletter-button:hover {
+        background-color: #6972c4;
+        transform: scale(1.05);
+    }
+
+    .nav-links.open ~ .navbar-newsletter {
+        display: none;
+    }
+
+    .hamburger-menu.open ~ .navbar-newsletter {
+        display: none;
+    }
+}
+
+.navbar-newsletter {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar-newsletter button {
+    padding: 8px 8px;
+    border-radius: 5px;
+    background-color: #898fc7;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.navbar-newsletter button:hover {
+    transform: scale(1.1);
+    animation: ease-in-out ease-in-out 0.5s;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 40px;
+    background-color: white;
+    opacity: 0.8;
+    margin-right: 20px;
+    box-shadow: 0 0 5px rgba(137, 143, 199, 0.5);
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.navbar-newsletter-link {
+    padding: 0.5rem 1rem;
+    background-color: #898fc7;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-newsletter-link:hover {
+    background-color: #6972c4;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-newsletter {
+        display: none;
+    }
+}

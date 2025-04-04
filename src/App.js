@@ -6,6 +6,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Newsletter from "./pages/Newsletter.js";
 
 // Imports from our components folder
 import MainApp from "./pages/Main.js";
@@ -17,6 +18,7 @@ function App() {
     <Router className="router">
       <Routes>
         <Route path="/" element={<MainApp/>} />
+        <Route path="/newsletter" element={<Newsletter/>} />
         <Route path="*" element={<Navigate to="/" replace/>} />
       </Routes>
     </Router>
