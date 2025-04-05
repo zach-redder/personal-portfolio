@@ -66,7 +66,7 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="logo">
-                <div onClick={() => scrollToSection('home')}><img src="/zr1.png" alt='ZR'/></div>
+                <div onClick={() => scrollToSection('home')}><img src="/zr2.png" alt='ZR'/></div>
             </div>
             <div className="navbar-right">
                 <div className={`hamburger-menu ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
