@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import { AOSElement } from "../functions/normalFunctions";
+import { Helmet } from "react-helmet-async";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -55,6 +56,10 @@ function MainPage() {
     }
 
     return (
+        <>
+        <Helmet>
+            <title>Zach Redder</title>
+        </Helmet>
         <div className="main-container">
             <Navbar></Navbar>
             <div className="social-icons">
@@ -268,6 +273,7 @@ function MainPage() {
             </section>
             <Footer></Footer>
         </div>
+    </>
     );
 }
 
