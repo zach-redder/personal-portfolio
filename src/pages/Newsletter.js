@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet-async'; 
 
 import "../stylesheets/Newsletter.css";
@@ -10,7 +9,6 @@ import Footer from "../components/Footer";
 import { addToNewsletter } from "../functions/firebaseFunctions";
 
 export default function Newsletter() {
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
