@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet-async'; 
 
 import "../stylesheets/Newsletter.css";
 import "../stylesheets/Main.css";
@@ -35,6 +36,24 @@ export default function Newsletter() {
     };
 
     return (
+        <>
+        <Helmet>
+            <title>Join My Newsletter</title>
+            <meta property="og:title" content="Join My Newsletter" />
+            <meta property="og:description" content="Exclusive information and tips regarding software development, marketing, and the philosophy behind it all." />
+            <meta property="og:image" content="https://zachredder.com/og-newsletter.png" />
+            <meta property="og:url" content="https://zachredder.com/newsletter" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Join My Newsletter" />
+            <meta
+                name="twitter:description"
+                content="Exclusive information and tips regarding software development, marketing, and the philosophy behind it all."
+            />
+            <meta
+                name="twitter:image"
+                content="https://zachredder.com/og-newsletter.png"
+            />
+        </Helmet>
         <div className="newsletter-page">
             <Navbar />
             <div className="newsletter-container">
@@ -66,5 +85,6 @@ export default function Newsletter() {
             </div>
             <Footer />
         </div>
+        </>
     );
 }

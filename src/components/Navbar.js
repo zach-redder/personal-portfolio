@@ -78,7 +78,7 @@ export default function Navbar() {
                     <div className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</div>
                     <div className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About</div>
                     <div className={activeSection === 'projects' ? 'active' : ''} onClick={() => scrollToSection('projects')}>Projects</div>
-                    <div className={activeSection === 'startups' ? 'active' : ''} onClick={() => scrollToSection('startups')}>Startups</div>
+                    <div className={activeSection === 'companies' ? 'active' : ''} onClick={() => scrollToSection('companies')}>Companies</div>
                     <div className={activeSection === 'contact' ? 'active' : ''} onClick={() => scrollToSection('contact')}>Contact</div>
                     <div className="navbar-social-icons">
                     <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">

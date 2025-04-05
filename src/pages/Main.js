@@ -197,10 +197,10 @@ function MainPage() {
                 
             </section>
             
-            <section id="startups">
+            <section id="companies">
                 <AOSElement animation="fade-down">
                     <div className="section-header-common">
-                        <h2 data-text="STARTUPS">My Startups</h2>
+                        <h2 data-text="COMPANIES">My Companies</h2>
                         <div className="section-header-line"/>
                     </div>
                 </AOSElement>

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 // Import AOS
 import AOS from 'aos';
+import { HelmetProvider } from 'react-helmet-async';
 import 'aos/dist/aos.css';
 
 // Initialize AOS
@@ -20,7 +21,9 @@ AOS.init({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>
 );
 
