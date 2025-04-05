@@ -17,6 +17,7 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "install": "npm install --legacy-peer-deps",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
