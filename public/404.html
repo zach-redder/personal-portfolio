@@ -16,11 +16,17 @@
         name="twitter:image"
         content="https://zachredder.com/og-newsletter.png"
     />
-    <script>
+    <!-- <script>
       // Redirect all paths to index.html
       var pathname = window.location.pathname;
       window.location.replace("/?redirect=" + pathname);
-    </script>
+    </script> -->
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+    <!-- React bundle will be loaded by GitHub Pages as usual -->
+    <script src="static/js/main.chunk.js"></script>
+    <script src="static/js/0.chunk.js"></script>
+    <script src="static/js/bundle.js"></script>
+  </body>
 </html>
