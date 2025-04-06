@@ -263,7 +263,7 @@ function MainPage() {
             <section id="contact">
                 <AOSElement animation="fade-down">
                     <div className="section-header-common">
-                        <h2 data-text="CONTACT">Get in Touch</h2>
+                        <h2 data-text="CONTACT">Contact Me</h2>
                         <div className="section-header-line"/>
                     </div>
                 </AOSElement>
