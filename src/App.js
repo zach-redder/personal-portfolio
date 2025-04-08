@@ -1,61 +1,28 @@
-// Imports from react
+// Imports from React
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
-import Newsletter from "./pages/Newsletter.js";
-import AOS from 'aos';
+import { useRouter } from 'next/router'; // Next.js router
+import AOS from 'aos'; // Animation library
 
 // Imports from our components folder
-import MainApp from "./pages/Main.js";
+import MainApp from "./pages/Main"; // Page components in Next.js (no .js extension required)
 
 // Component to handle AOS refresh on route changes
 function AnimationRefresh({ children }) {
-  const location = useLocation();
-  
+  const router = useRouter();
+
   useEffect(() => {
-    // Refresh AOS animations when route changes
+    // Refresh AOS animations on route changes
     AOS.refresh();
-  }, [location]);
+  }, [router.asPath]); // Trigger on route change
 
   return <>{children}</>;
 }
 
-// Our main app component
-function App() {
+// Main component with navigation logic
+export default function App() {
   return (
-    // Router component to handle routing from pages
-    <Router className="router">
-      <AnimationRefresh>
-        <AppRoutes />
-      </AnimationRefresh>
-    </Router>
+    <AnimationRefresh>
+      <MainApp /> {/* Use your main page component here */}
+    </AnimationRefresh>
   );
 }
-
-// A separate component to handle navigation logic
-function AppRoutes() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const redirect = new URLSearchParams(window.location.search).get("redirect");
-    if (redirect) {
-      navigate(redirect);
-    }
-  }, [navigate]);
-
-  return (
-    <Routes>
-      <Route path="/" element={<MainApp />} />
-      <Route path="/newsletter" element={<Newsletter />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
-}
-
-export default App;
