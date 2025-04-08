@@ -5,16 +5,16 @@ import { Helmet } from "react-helmet-async";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import "../stylesheets/Main.css";
-import "../stylesheets/Navbar.css";
-import "../stylesheets/Socials.css";
-import "../stylesheets/ContactBox.css";
-import "../stylesheets/About.css";
-import "../stylesheets/StartScreen.css";
-import "../stylesheets/Skills.css";
-import "../stylesheets/Projects.css";
-import "../stylesheets/Company.css";
-import "../stylesheets/Newsletter.css";
+// import "../stylesheets/Main.css";
+// import "../stylesheets/Navbar.css";
+// import "../stylesheets/Socials.css";
+// import "../stylesheets/ContactBox.css";
+// import "../stylesheets/About.css";
+// import "../stylesheets/StartScreen.css";
+// import "../stylesheets/Skills.css";
+// import "../stylesheets/Projects.css";
+// import "../stylesheets/Company.css";
+// import "../stylesheets/Newsletter.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
