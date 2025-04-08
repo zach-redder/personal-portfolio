@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/Projects.css";
+// import "../stylesheets/Projects.css";
 
 export default function ProjectCard({ projectName, projectLogo, projectDescription, techStack, link }) {
     return (

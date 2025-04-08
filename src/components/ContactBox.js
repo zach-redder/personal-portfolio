@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { storeFormData, addToNewsletter } from '../functions/firebaseFunctions';
 
-import '../stylesheets/ContactBox.css';
+// import '../stylesheets/ContactBox.css';
 
 export default function ContactBox() {
     const [isSubmitted, setIsSubmitted] = useState(false);
