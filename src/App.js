@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'; // Next.js router
 import AOS from 'aos'; // Animation library
 
 // Imports from our components folder
-import MainApp from "./pages/Main"; // Page components in Next.js (no .js extension required)
+import MainApp from "./pages"; // Page components in Next.js (no .js extension required)
 
 // Component to handle AOS refresh on route changes
 function AnimationRefresh({ children }) {
