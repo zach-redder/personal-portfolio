@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Helmet } from 'react-helmet-async'; 
 
-import "../stylesheets/Newsletter.css";
-import "../stylesheets/Main.css";
+// import "../stylesheets/Newsletter.css";
+// import "../stylesheets/Main.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
