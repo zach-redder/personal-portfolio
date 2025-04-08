@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';  // Import Next.js router
 
 export default function Navbar() {
-
     const [activeSection, setActiveSection] = useState('home');
     const [menuOpen, setMenuOpen] = useState(false);
-    const navigate = useNavigate();
-    const location = useLocation();
+    const router = useRouter();  // Use Next.js router
 
     const navigateToNewsletter = () => {
-        navigate('/newsletter');
+        router.push('/newsletter');  // Use router.push for navigation
     }
 
     useEffect(() => {
-        if (location.pathname === '/') {
-            setActiveSection('home');
-        }
-
         const sections = document.querySelectorAll('section[id]');
         const navCheck = () => {
             const scrollPos = window.scrollY;
@@ -42,26 +36,26 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', navCheck);
         };
-    }, [location.pathname]);
+    }, [router.pathname]);
 
     const scrollToSection = (id) => {
         setMenuOpen(false);
         
-        if (location.pathname === "/newsletter") {
-            navigate("/", { state: { scrollTo: id } });
+        if (router.pathname === "/newsletter") {
+            router.push("/", { query: { scrollTo: id } });
         } else {
             document.getElementById(id).scrollIntoView({ behavior: "smooth" });
         }
     }
 
     useEffect(() => {
-        if (location.state?.scrollTo) {
-            const element = document.getElementById(location.state.scrollTo);
+        if (router.query.scrollTo) {
+            const element = document.getElementById(router.query.scrollTo);
             if (element) {
                 element.scrollIntoView({ behavior: "smooth" });
             }
         }
-    }, [location.state]);
+    }, [router.query]);
 
     return (
         <nav className="navbar">
@@ -81,20 +75,19 @@ export default function Navbar() {
                     <div className={activeSection === 'companies' ? 'active' : ''} onClick={() => scrollToSection('companies')}>Companies</div>
                     <div className={activeSection === 'contact' ? 'active' : ''} onClick={() => scrollToSection('contact')}>Contact</div>
                     <div className="navbar-social-icons">
-                    <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">
-                        <i className="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/zachredder/" target="_blank" rel="noreferrer">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://x.com/zach_redder" target="_blank" rel="noreferrer">
-                        <i className="fa-brands fa-x-twitter"></i>
-                    </a>
+                        <a href="https://github.com/zach-redder" target="_blank" rel="noreferrer">
+                            <i className="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/zachredder/" target="_blank" rel="noreferrer">
+                            <i className="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/zach_redder" target="_blank" rel="noreferrer">
+                            <i className="fa-brands fa-x-twitter"></i>
+                        </a>
                     </div>
                 </div>
-                    <div className="vertical-line"></div>
-                    <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
-                
+                <div className="vertical-line"></div>
+                <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
             </div>
         </nav>
     );
