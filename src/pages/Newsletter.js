@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from 'react-helmet-async'; 
 
 // import "../stylesheets/Newsletter.css";
 // import "../stylesheets/Main.css";
@@ -34,10 +33,6 @@ export default function Newsletter() {
     };
 
     return (
-        <>
-        <Helmet>
-            <title>Join My Newsletter</title>
-        </Helmet>
         <div className="newsletter-page">
             <Navbar />
             <div className="newsletter-container">
@@ -69,6 +64,5 @@ export default function Newsletter() {
             </div>
             <Footer />
         </div>
-        </>
     );
 }

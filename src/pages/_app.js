@@ -1,5 +1,3 @@
-import HelmetProvider from 'react-helmet-async';
-
 import '../stylesheets/About.css';  // Import global styles here
 import '../stylesheets/Company.css'; // Import global styles here
 import '../stylesheets/ContactBox.css'; // Import global styles here
@@ -12,11 +10,7 @@ import '../stylesheets/Socials.css'; // Import global styles here
 import '../stylesheets/StartScreen.css'; // Import global styles here
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <HelmetProvider>
-        <Component {...pageProps} />;
-    </HelmetProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
