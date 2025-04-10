@@ -1,18 +1,9 @@
 import React, { useEffect } from "react";
 
 import { AOSElement } from "../functions/normalFunctions";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-// import "../stylesheets/Main.css";
-// import "../stylesheets/Navbar.css";
-// import "../stylesheets/Socials.css";
-// import "../stylesheets/ContactBox.css";
-// import "../stylesheets/About.css";
-// import "../stylesheets/StartScreen.css";
-// import "../stylesheets/Skills.css";
-// import "../stylesheets/Projects.css";
-// import "../stylesheets/Company.css";
-// import "../stylesheets/Newsletter.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -47,6 +38,13 @@ function MainPage() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+    }, []);
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Set default duration for animations
+            once: true, // Run animation once
+        });
     }, []);
 
     const scrollToSection = (id) => {

@@ -7,7 +7,7 @@ export default function Navbar() {
     const router = useRouter();  // Use Next.js router
 
     const navigateToNewsletter = () => {
-        router.push('/newsletter');  // Use router.push for navigation
+        router.push('/newsletter'); 
     }
 
     useEffect(() => {
@@ -40,13 +40,19 @@ export default function Navbar() {
 
     const scrollToSection = (id) => {
         setMenuOpen(false);
-        
+    
         if (router.pathname === "/newsletter") {
-            router.push("/", { query: { scrollTo: id } });
+            // If you're on the newsletter page, navigate back to home and scroll to section, but keep the URL clean.
+            router.push("/", undefined, { shallow: true }).then(() => {
+                // After navigation is complete, scroll to the desired section
+                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            });
         } else {
-            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+            // If you're already on the homepage, just scroll to the section
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         }
-    }
+    };
+    
 
     useEffect(() => {
         if (router.query.scrollTo) {
