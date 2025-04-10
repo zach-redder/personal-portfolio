@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';  // Import Next.js router
+import Link from 'next/link';
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState('home');
@@ -93,7 +94,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="vertical-line"></div>
-                <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
+                <Link href="/newsletter">
+                    <button className="mobile-newsletter-button">Newsletter</button>
+                </Link>
             </div>
         </nav>
     );
