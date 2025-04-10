@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';  // Import Next.js router
-import Link from 'next/link';
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState('home');
@@ -8,7 +7,7 @@ export default function Navbar() {
     const router = useRouter();  // Use Next.js router
 
     const navigateToNewsletter = () => {
-        router.push('/newsletter', undefined, { shallow: true }); 
+        router.push('/newsletter'); 
     }
 
     useEffect(() => {
@@ -94,9 +93,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="vertical-line"></div>
-                <Link href="/newsletter">
-                    <button className="mobile-newsletter-button">Newsletter</button>
-                </Link>
+                <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
             </div>
         </nav>
     );
