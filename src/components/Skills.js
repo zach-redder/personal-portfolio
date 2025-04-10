@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import '../stylesheets/Skills.css';
 
 const Skills = () => {
     const [activeCategory, setActiveCategory] = useState('all');

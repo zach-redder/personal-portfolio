@@ -7,7 +7,7 @@ export default function Navbar() {
     const router = useRouter();  // Use Next.js router
 
     const navigateToNewsletter = () => {
-        router.push('/newsletter'); 
+        router.push('/newsletter', undefined, { shallow: true }); 
     }
 
     useEffect(() => {

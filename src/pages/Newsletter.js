@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-// import "../stylesheets/Newsletter.css";
-// import "../stylesheets/Main.css";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { addToNewsletter } from "../functions/firebaseFunctions";
