@@ -61,7 +61,7 @@ export default function Newsletter() {
                     ) : (
                         <div className="subscription-container">
                             <h2>Subscribe to My Newsletter</h2>
-                            <p>Exclusive information and tips regarding software development, marketing, and the philosophy behind it all.</p>
+                            <p>Exclusive information on creating software and AI - for aspiring software entrepreneurs.</p>
                             <form onSubmit={handleSubmit} className="subscription-form">
                                 <input
                                     type="email"
