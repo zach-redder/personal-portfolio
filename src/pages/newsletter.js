@@ -53,7 +53,7 @@ export default function Newsletter() {
             <Navbar />
             <div className="newsletter-container">
                 <div className="newsletter-content">
-                    <h1>The Golden Mean</h1>
+                    <h1>The Z Philosophy</h1>
                     {isSubmitted ? (
                         <div className="success-message">
                             <h2>Thank you for subscribing!</h2>
