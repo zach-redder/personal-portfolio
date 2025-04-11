@@ -53,15 +53,15 @@ export default function Newsletter() {
             <Navbar />
             <div className="newsletter-container">
                 <div className="newsletter-content">
-                    <h1>The Z Philosophy</h1>
+                    <h1>The Golden Mean</h1>
                     {isSubmitted ? (
                         <div className="success-message">
                             <h2>Thank you for subscribing!</h2>
                         </div>
                     ) : (
                         <div className="subscription-container">
-                            <h2>Subscribe to My Newsletter</h2>
-                            <p>Exclusive information on creating software and AI - for aspiring software entrepreneurs.</p>
+                            <h2>For Software Entrepreneurs</h2>
+                            <p>Exclusive, practical information from my personal experience on creating software and AI agents to evolve your startup.</p>
                             <form onSubmit={handleSubmit} className="subscription-form">
                                 <input
                                     type="email"
