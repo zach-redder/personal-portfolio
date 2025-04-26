@@ -34,6 +34,7 @@ export default function Newsletter() {
     return (
         <>
         <Head>
+            <title>Join My Newsletter</title>
             <meta property="og:title" content="Join My Newsletter" />
             <meta property="og:description" content="Real stories, actionable tactics, and mindset shifts to help you build profitable products. Become the founder you aspire to be." />
             <meta property="og:image" content="https://zachredder.com/og-newsletter.png" />
