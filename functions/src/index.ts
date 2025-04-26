@@ -53,12 +53,12 @@ Talk soon,
         <div style="font-family: sans-serif; line-height: 1.5; max-width: 600px; margin: auto;">
         <h2 style="color: #333;">Welcome to <em>Builder's Compass</em>!</h2>
         <p>Hey ${firstName},</p>
-        <p>Thanks for signing up — I’m pumped to have you aboard.</p>
+        <p>Thanks for signing up, I’m pumped to have you aboard.</p>
         <p>Here’s what you can expect:</p>
         <ul>
           <li><strong>Real stories</strong> from building products (the wins <em>and</em> fails)</li>
-          <li><strong>Actionable tips and frameworks</strong> for software development</li>
-          <li><strong>Deep dives</strong> into staying aligned while building real businesses</li>
+          <li>Actionable tips and frameworks for <strong>software development</strong></li>
+          <li>Deep dives into staying <strong>aligned</strong> while building real businesses</li>
         </ul>
         <p>You’re officially on the journey.<br/>
         Excited to build alongside you.<br/><br/>
