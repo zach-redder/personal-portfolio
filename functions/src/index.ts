@@ -35,36 +35,36 @@ onDocumentCreated("newsletterList/{userId}", async (event) => {
   await admin.firestore().collection("mail").add({
     to: [email],
     message: {
-      subject: "You're in.",
+      subject: "You're officially aboard Builder’s Compass.",
       text: `Hey ${firstName},
 
-Thanks for signing up for The Z Philosophy, I'm pumped to have you aboard.
+Thanks for signing up for Builder's Compass, I'm pumped to have you aboard.
 
 Here’s what you can expect:
+    • Real stories from my experience of building products (the wins *and* fails)
     • Insightful tips and deep dives into software development
-    • Smart strategies on marketing your work
-    • A little philosophy to keep your mind sharp and your process meaningful
+    • Frameworks for staying aligned while building businesses
+  
+You’re officially on the journey. Excited to build alongside you.
 
 Talk soon,
     Zach`,
       html: `
-        <div style="font-family: sans-serif; line-height: 1.5;">
-          <h2>Welcome to <em>The Z Philosophy</em>!</h2>
-          <p>Hey ${firstName},</p>
-          <p>Thanks for signing up to my newsletter, 
-          I’m pumped to have you aboard.</p>
-          <p>Here’s what you can expect:</p>
-          <ul>
-            <li>Insightful tips and deep dives into 
-            <strong>software development</strong></li>
-            <li>Smart strategies for 
-            <strong>marketing</strong> your work</li>
-            <li>A little <strong>philosophy</strong>
-             to keep things meaningful</li>
-          </ul>
-          <p>Glad to have you on this journey.<br/>
-          <br/>Talk soon,<br/>Zach</p>
-        </div>
+        <div style="font-family: sans-serif; line-height: 1.5; max-width: 600px; margin: auto;">
+        <h2 style="color: #333;">Welcome to <em>Builder's Compass</em>!</h2>
+        <p>Hey ${firstName},</p>
+        <p>Thanks for signing up — I’m pumped to have you aboard.</p>
+        <p>Here’s what you can expect:</p>
+        <ul>
+          <li><strong>Real stories</strong> from building products (the wins <em>and</em> fails)</li>
+          <li><strong>Actionable tips and frameworks</strong> for software development</li>
+          <li><strong>Deep dives</strong> into staying aligned while building real businesses</li>
+        </ul>
+        <p>You’re officially on the journey.<br/>
+        Excited to build alongside you.<br/><br/>
+        Talk soon,<br/>
+        Zach</p>
+      </div>
       `,
     },
   });

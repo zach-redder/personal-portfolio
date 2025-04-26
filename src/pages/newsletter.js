@@ -35,14 +35,14 @@ export default function Newsletter() {
         <>
         <Head>
             <meta property="og:title" content="Join My Newsletter" />
-            <meta property="og:description" content="Exclusive information and tips regarding software development, marketing, and the philosophy behind it all." />
+            <meta property="og:description" content="Real stories, actionable tactics, and mindset shifts to help you build profitable products. Become the founder you aspire to be." />
             <meta property="og:image" content="https://zachredder.com/og-newsletter.png" />
             <meta property="og:url" content="https://zachredder.com/newsletter" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Join My Newsletter" />
             <meta
                 name="twitter:description"
-                content="Exclusive information and tips regarding software development, marketing, and the philosophy behind it all."
+                content="Real stories, actionable tactics, and mindset shifts to help you build profitable products. Become the founder you aspire to be."
             />
             <meta
                 name="twitter:image"
@@ -53,15 +53,15 @@ export default function Newsletter() {
             <Navbar />
             <div className="newsletter-container">
                 <div className="newsletter-content">
-                    <h1>The Z Philosophy</h1>
+                    <h1>Builder's Compass</h1>
                     {isSubmitted ? (
                         <div className="success-message">
-                            <h2>Thank you for subscribing!</h2>
+                            <h2>Thanks for subscribing!</h2>
                         </div>
                     ) : (
                         <div className="subscription-container">
-                            <h2>For Software Entrepreneurs</h2>
-                            <p>Exclusive, practical information from my personal experience on creating software and AI agents to evolve your startup.</p>
+                            <h2>Stay Aligned and Build Smarter</h2>
+                            <p>Real stories, actionable tactics, and mindset shifts to help you build profitable products. Become the founder you aspire to be.</p>
                             <form onSubmit={handleSubmit} className="subscription-form">
                                 <input
                                     type="email"
@@ -71,7 +71,7 @@ export default function Newsletter() {
                                     required
                                 />
                                 <button type="submit" disabled={isSubmitting}>
-                                    {isSubmitting ? "Subscribing..." : "Subscribe"}
+                                    {isSubmitting ? "Locking You In..." : "Subscribe"}
                                 </button>
                             </form>
                         </div>

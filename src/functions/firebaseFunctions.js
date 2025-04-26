@@ -8,7 +8,7 @@ export async function storeFormData(name, email, message) {
         const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty) {
-            console.log("Email already exists in the database.");
+           // console.log("Email already exists in the database.");
             return; // Exit the function if the email already exists
         }
 
@@ -20,9 +20,8 @@ export async function storeFormData(name, email, message) {
             timestamp: new Date()
         });
 
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-        console.error("Error adding document: ", e);
+      //  console.error("Error adding document: ", e);
     }
 }
 
@@ -33,7 +32,7 @@ export async function addToNewsletter(email) {
         const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty) {
-            console.log("Email already exists in the newsletter list.");
+            //console.log("Email already exists in the newsletter list.");
             return; // Exit the function if the email already exists
         }
 
@@ -43,8 +42,8 @@ export async function addToNewsletter(email) {
             timestamp: new Date()
         });
 
-        console.log("Added to newsletter list with ID: ", docRef.id);
+        //console.log("Added to newsletter list with ID: ", docRef.id);
     } catch (e) {
-        console.error("Error adding to newsletter list: ", e);
+       // console.error("Error adding to newsletter list: ", e);
     }
 }
