@@ -42,8 +42,8 @@ Thanks for signing up for Builder's Compass, I'm pumped to have you aboard.
 
 Here’s what you can expect:
     • Real stories from my experience of building products (the wins *and* fails)
-    • Insightful tips and deep dives into software development
-    • Frameworks for staying aligned while building businesses
+    • Insightful tips and deep dives into development and deploying software correctly
+    • How you can stay aligned while building businesses
   
 You’re officially on the journey. Excited to build alongside you.
 
@@ -57,8 +57,8 @@ Talk soon,
         <p>Here’s what you can expect:</p>
         <ul>
           <li><strong>Real stories</strong> from building products (the wins <em>and</em> fails)</li>
-          <li>Actionable tips and frameworks for <strong>software development</strong></li>
-          <li>Deep dives into staying <strong>aligned</strong> while building real businesses</li>
+          <li>Insightful tips and deep dives into development and deploying software <strong>correctly</strong></li>
+          <li>How you can stay <strong>aligned</strong> while building businesses</li>
         </ul>
         <p>You’re officially on the journey.<br/>
         Excited to build alongside you.<br/><br/>

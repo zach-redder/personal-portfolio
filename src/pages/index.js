@@ -183,8 +183,17 @@ function MainPage() {
                                 projectDescription={'A webpage designed to house information about myself and my projects, providing easy access to my professional work and personal newsletter. This was created as a personal project for myself by myself.'}
                                 projectName={'Personal Portfolio'}
                                 projectLogo={'/zr2.png'}
-                                techStack={['React.js', 'Firestore', 'Github Pages']}
+                                techStack={['React.js', 'Firestore', 'Vercel']}
                                 link={'https://github.com/zach-redder/personal-portfolio'}>
+                            </ProjectCard>
+                        </AOSElement>
+                        <AOSElement animation="fade-right" delay={600}>
+                            <ProjectCard 
+                                projectDescription={'A streamlit project designed to work with LimnoTech clients on questions they have about environmental concerns, specifically regarding watersheds and water pollution. This was created as a solo project in preparation for my internship over the summer of 2025.'}
+                                projectName={'Watershed Navigator'}
+                                projectLogo={'/limnotech.png'}
+                                techStack={['Python', 'Streamlit', 'Ollama', 'Sentance Transformers']}
+                                link={'https://github.com/zach-redder/watershed-navigator'}>
                             </ProjectCard>
                         </AOSElement>
                     </div>
@@ -201,8 +210,29 @@ function MainPage() {
                         <div className="section-header-line"/>
                     </div>
                 </AOSElement>
+                
                 <AOSElement animation="fade-up" delay={200}>
                     <div className="companies-container">
+                        <AOSElement animation="fade-left" delay={400}>
+                            <div className="company-card">
+                                <div className="company-logo">
+                                    <img src="/keystone.png" alt="Keystone" />
+                                </div>
+                                <div className="company-content">
+                                    <h3>Keystone</h3>
+                                    <p className="company-description">
+                                        Keystone is a mobile app designed for one purpose, to keep you aligned with
+                                        your values and goals. Whether you tend to be a people pleaser, you struggle to
+                                        keep a sense of purpose, or you constantly get distracted, Keystone will help you
+                                        stay on track. Keystone is currently in development and will be available soon.
+                                    </p>
+                                    <div className="status-label">
+                                        <i className="fas fa-hourglass-half"></i> Coming Soon
+                                    </div>
+                                </div>
+                            </div>
+                        </AOSElement>
+
                         <AOSElement animation="fade-right" delay={300}>
                             <div className="company-card">
                                 <div className="company-logo">
@@ -215,7 +245,7 @@ function MainPage() {
                                     <p className="company-description">
                                         Scripted Evolution is a marketing company focused on helping B2B SaaS businesses
                                         reach their target audience and grow their customer base. We specialize in creating
-                                        high-converting landing pages and marketing funnels that turn visitors into qualified leads,
+                                        high-converting landing pages and personal brand marketing funnels that turn visitors into qualified leads,
                                         streamlining the path from discovery to decision for complex software solutions.
                                     </p>
                                     <div className="status-label">
@@ -255,7 +285,7 @@ function MainPage() {
             <section id="contact">
                 <AOSElement animation="fade-down">
                     <div className="section-header-common">
-                        <h2 data-text="CONTACT">Contact Me</h2>
+                        <h2 data-text="CONTACT ME">Contact Me</h2>
                         <div className="section-header-line"/>
                     </div>
                 </AOSElement>
