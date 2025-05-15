@@ -10,7 +10,7 @@ export default function Newsletter() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const FORM_ID = "8056158";
+    const FORM_ID = "8060516";
     const API_KEY = "j7iI-lU6B88XzVqUC3ecXA";
 
     const handleSubmit = async (e) => {
@@ -66,15 +66,15 @@ export default function Newsletter() {
             <Navbar />
             <div className="newsletter-container">
                 <div className="newsletter-content">
-                    <h1>Builder's Compass</h1>
+                    <h1>The Builder's Compass</h1>
                     {isSubmitted ? (
                         <div className="success-message">
                             <h2>Thanks for subscribing!</h2>
                         </div>
                     ) : (
                         <div className="subscription-container">
-                            <h2>Stay Aligned and Build Smarter</h2>
-                            <p>Real stories, actionable tactics, and mindset shifts to help you build profitable products. Become the founder you aspire to be.</p>
+                            <h2>Personal stories and philosophical frameworks to help you craft software with integrity and learn authentic branding.</h2>
+                            <p>Subscribe for a FREE 10 page authentic branding guide.</p>
                             <form onSubmit={handleSubmit} className="subscription-form">
                                 <input
                                     type="email"
@@ -84,7 +84,7 @@ export default function Newsletter() {
                                     required
                                 />
                                 <button type="submit" disabled={isSubmitting}>
-                                    {isSubmitting ? "Locking You In..." : "Subscribe"}
+                                    {isSubmitting ? "Subscribing..." : "Subscribe"}
                                 </button>
                             </form>
                         </div>

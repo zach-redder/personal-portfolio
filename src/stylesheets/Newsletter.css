@@ -26,7 +26,7 @@
     background-color: #191919;
     border-radius: 10px;
     padding: 3rem;
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -50,6 +50,7 @@
     text-align: center;
     color: #ffffff;
     position: relative;
+    color: #898fc7;
 }
 
 .newsletter-content h1::after {
@@ -73,16 +74,18 @@
 }
 
 .subscription-container h2 {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: #898fc7;
+    color: #ffffff;
+    font-weight: normal;
 }
 
 .subscription-container p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: #ffffff;
     line-height: 1.6;
+    font-style: italic;
 }
 
 .subscription-form {

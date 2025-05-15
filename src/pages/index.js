@@ -70,7 +70,7 @@ function MainPage() {
                     <div className="text-section">
                         <p className="first-p">Hello, my name is</p>
                         <h1>Zach Redder</h1>
-                        <p className="second-p">I'm a developer, creator, and entrepreneur.</p>
+                        <p className="second-p">I'm a developer, creator, and founder.</p>
                         <button className="contact-button" onClick={() => scrollToSection('contact')}>
                             Get in Touch
                         </button>
@@ -102,7 +102,7 @@ function MainPage() {
                         <div className="about-me-content">
                             <div className="about-me-text">
                                 <p>
-                                    I am an American software developer, entrepreneur, creator, and philosopher.
+                                    I am an American software developer, founder, creator, and philosopher.
                                 </p>
                                 <p>
                                     I study Computer Science and Philosophy at Calvin University, combining
@@ -121,7 +121,7 @@ function MainPage() {
                                 </AOSElement>
                                 <AOSElement animation="flip-left" delay={600} className="highlight-box">
                                     <i className="fas fa-lightbulb highlight-icon"></i>
-                                    <h3>Entrepreneur</h3>
+                                    <h3>Founder</h3>
                                 </AOSElement>
                                 <AOSElement animation="flip-left" delay={800} className="highlight-box">
                                     <i className="fas fa-paint-brush highlight-icon"></i>
@@ -226,14 +226,14 @@ function MainPage() {
                                         keep a sense of purpose, or you constantly get distracted, Keystone will help you
                                         stay on track. Keystone is currently in development and will be available soon.
                                     </p>
-                                    <div className="status-label">
-                                        <i className="fas fa-hourglass-half"></i> Coming Soon
-                                    </div>
+                                    <a href="https://thekeystoneapp.com" target="_blank" rel="noreferrer" className="company-link">
+                                        <i className="fas fa-key"></i> Join Waitlist
+                                    </a>
                                 </div>
                             </div>
                         </AOSElement>
 
-                        <AOSElement animation="fade-right" delay={300}>
+                        {/* <AOSElement animation="fade-right" delay={300}>
                             <div className="company-card">
                                 <div className="company-logo">
                                     <div className="hourglass-container">
@@ -253,7 +253,7 @@ function MainPage() {
                                     </div>
                                 </div>
                             </div>
-                        </AOSElement>
+                        </AOSElement> */}
 
                         <AOSElement animation="fade-left" delay={400}>
                             <div className="company-card">
@@ -285,7 +285,7 @@ function MainPage() {
             <section id="contact">
                 <AOSElement animation="fade-down">
                     <div className="section-header-common">
-                        <h2 data-text="CONTACT ME">Contact Me</h2>
+                        <h2 data-text="CONTACT">Contact Me</h2>
                         <div className="section-header-line"/>
                     </div>
                 </AOSElement>
