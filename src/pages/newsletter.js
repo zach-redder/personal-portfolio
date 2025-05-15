@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { addToNewsletter } from "../functions/firebaseFunctions";
 
 import Head from "next/head";
 
@@ -11,21 +10,34 @@ export default function Newsletter() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    const FORM_ID = "8056158";
+    const API_KEY = "j7iI-lU6B88XzVqUC3ecXA";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+    
         try {
-            await addToNewsletter(email);
+            const res = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: email,
+                    api_key: API_KEY
+                })
+            });
+    
+            if (!res.ok) throw new Error("Failed to subscribe");
+    
             setIsSubmitted(true);
             setEmail("");
-            
+    
             // Hide success message after 5 seconds
             setTimeout(() => {
                 setIsSubmitted(false);
             }, 5000);
         } catch (error) {
-            console.error("Error subscribing to newsletter:", error);
+            console.error("Error subscribing to ConvertKit:", error);
         } finally {
             setIsSubmitting(false);
         }

@@ -2,11 +2,14 @@ import React, { useCallback, useState } from 'react';
 
 import { useForm } from "react-hook-form";
 
-import { storeFormData, addToNewsletter } from '../functions/firebaseFunctions';
+import { storeFormData } from '../functions/firebaseFunctions';
 
 export default function ContactBox() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const FORM_ID = "8056158";
+    const API_KEY = "j7iI-lU6B88XzVqUC3ecXA";
 
     const { 
         register, 
@@ -20,24 +23,38 @@ export default function ContactBox() {
         }
     }); 
     
-    const onSubmit = useCallback(async () => { 
+    const onSubmit = useCallback(async () => {
         setIsSubmitting(true);
         const { firstname, email, message, newsletter } = getValues();
         console.log(firstname, email, message, newsletter);
-        
+    
         try {
+            // 1. Store form data in Firebase
             await storeFormData(firstname, email, message);
-            
-            // If newsletter is checked, add to newsletter list
+    
+            // 2. If newsletter is checked, send to ConvertKit
             if (newsletter) {
-                await addToNewsletter(email);
+                const res = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email,
+                        first_name: firstname,
+                        api_key: API_KEY
+                    })
+                });
+    
+                if (!res.ok) {
+                    throw new Error("Failed to subscribe to ConvertKit");
+                }
             }
-            
-            // Show success message and reset form
+    
+            // 3. Show success + reset form
             setIsSubmitted(true);
             reset();
-            
-            // Hide success message after 5 seconds
+    
             setTimeout(() => {
                 setIsSubmitted(false);
             }, 5000);
@@ -46,7 +63,7 @@ export default function ContactBox() {
         } finally {
             setIsSubmitting(false);
         }
-    }, [getValues, reset]); 
+    }, [getValues, reset]);
 
     return (
         <div className='contact-container'>

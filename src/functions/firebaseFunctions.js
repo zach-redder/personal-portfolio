@@ -24,26 +24,3 @@ export async function storeFormData(name, email, message) {
       //  console.error("Error adding document: ", e);
     }
 }
-
-export async function addToNewsletter(email) {
-    try {
-        // Check if the email already exists in the newsletterList collection
-        const q = query(collection(db, "newsletterList"), where("email", "==", email));
-        const querySnapshot = await getDocs(q);
-
-        if (!querySnapshot.empty) {
-            //console.log("Email already exists in the newsletter list.");
-            return; // Exit the function if the email already exists
-        }
-
-        // If the email does not exist, add it to the newsletter list
-        const docRef = await addDoc(collection(db, "newsletterList"), {
-            email: email,
-            timestamp: new Date()
-        });
-
-        //console.log("Added to newsletter list with ID: ", docRef.id);
-    } catch (e) {
-       // console.error("Error adding to newsletter list: ", e);
-    }
-}
