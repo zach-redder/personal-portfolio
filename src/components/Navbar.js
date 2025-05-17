@@ -41,7 +41,7 @@ export default function Navbar() {
     const scrollToSection = (id) => {
         setMenuOpen(false);
     
-        if (router.pathname === "/newsletter") {
+        if (router.pathname === "/newsletter" || router.pathname === "/thankyou") {
             // If you're on the newsletter page, navigate back to home and scroll to section, but keep the URL clean.
             router.push("/", undefined, { shallow: true }).then(() => {
                 // After navigation is complete, scroll to the desired section

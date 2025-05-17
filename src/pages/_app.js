@@ -8,6 +8,7 @@ import '../stylesheets/Projects.css';
 import '../stylesheets/Skills.css';
 import '../stylesheets/Socials.css';
 import '../stylesheets/StartScreen.css';
+import '../stylesheets/ThankYou.css';
 
 import React, { useEffect } from 'react';
 import Head from 'next/head';

@@ -69,7 +69,7 @@ export default function Newsletter() {
                     <h1>The Builder's Compass</h1>
                     {isSubmitted ? (
                         <div className="success-message">
-                            <h2>Thanks for subscribing!</h2>
+                            <h2>Check your email to verify your subscription</h2>
                         </div>
                     ) : (
                         <div className="subscription-container">
