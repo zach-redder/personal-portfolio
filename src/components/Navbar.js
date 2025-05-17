@@ -69,6 +69,7 @@ export default function Navbar() {
                 <div onClick={() => scrollToSection('home')}><img src="/zr2.png" alt='ZR'/></div>
             </div>
             <div className="navbar-right">
+                <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
                 <div className={`hamburger-menu ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                     <div className="bar1"></div>
                     <div className="bar2"></div>
@@ -93,7 +94,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="vertical-line"></div>
-                <button className="mobile-newsletter-button" onClick={navigateToNewsletter}>Newsletter</button>
+                <div className="navbar-newsletter">
+                    <button onClick={navigateToNewsletter}>Newsletter</button>
+                </div>
             </div>
         </nav>
     );

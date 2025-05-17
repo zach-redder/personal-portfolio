@@ -78,8 +78,8 @@
     justify-content: space-around;
     min-width: 32px;
     height: 24px;
-    margin-right: 20px;
     z-index: 1001;
+    align-items: flex-end;
 }
 
 .hamburger-menu div {
@@ -103,6 +103,10 @@
     transform: rotate(225deg) translate(8px, 7px);
 }
 
+.mobile-newsletter-button {
+    display: none;
+}
+
 @keyframes slide-from-right {
     from {
         transform: translateX(100%);
@@ -115,6 +119,7 @@
 @media screen and (max-width: 768px) {
     .nav-links {
         display: none;
+        margin-right: 0;
         background-color: #191919;
         border-radius: 5px;
         width: 85%;
@@ -138,6 +143,41 @@
         right: 0;
         height: 4px;
         background: linear-gradient(90deg, #898fc7, #6972c4);
+    }
+
+    .mobile-newsletter-button {
+        display: block;
+        width: 90%;
+        margin: 32px auto 16px auto;
+        padding: 16px 0;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #898fc7 60%, #6972c4 100%);
+        color: #191919;
+        font-weight: 700;
+        font-size: 1.2rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(137, 143, 199, 0.15);
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-newsletter-button:hover {
+        background: linear-gradient(90deg, #6972c4 60%, #898fc7 100%);
+        color: #fff;
+        transform: scale(1.04);
+        box-shadow: 0 4px 16px rgba(137, 143, 199, 0.25);
+    }
+
+    .navbar-right {
+        justify-content: flex-end;
+        gap: 0;
+        padding-right: 0;
+    }
+
+    .navbar-newsletter button {
+        display: none;
     }
 
     .nav-links div {
@@ -169,13 +209,13 @@
 
     .hamburger-menu {
         display: block;
-        margin-right: 20px;
+        margin-right: 0;
+        right: 0;
     }
 
     .vertical-line {
         display: none;
     }
-
 
     .navbar-social-icons {
         margin-top: 20px;
@@ -187,20 +227,15 @@
         font-size: 24px;
     }
 
-    .mobile-newsletter-button {
-        display: none;
-    }
-
-    .mobile-newsletter-button:hover {
-        background-color: #6972c4;
-        transform: scale(1.05);
-    }
-
     .nav-links.open ~ .navbar-newsletter {
         display: none;
     }
 
     .hamburger-menu.open ~ .navbar-newsletter {
+        display: none;
+    }
+
+    .navbar-newsletter {
         display: none;
     }
 }
@@ -213,7 +248,7 @@
 }
 
 .navbar-newsletter button {
-    padding: 8px 8px;
+    padding: 12px 8px;
     border-radius: 5px;
     background-color: #898fc7;
     color: #000000;
@@ -250,10 +285,4 @@
 
 .navbar-newsletter-link:hover {
     background-color: #6972c4;
-}
-
-@media screen and (max-width: 768px) {
-    .navbar-newsletter {
-        display: none;
-    }
 }
