@@ -105,6 +105,20 @@
 
 .mobile-newsletter-button {
     display: none;
+    width: 90%;
+    margin: 32px auto 16px auto;
+    padding: 16px 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #898fc7 60%, #6972c4 100%);
+    color: #191919;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(137, 143, 199, 0.15);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 @keyframes slide-from-right {
@@ -147,26 +161,20 @@
 
     .mobile-newsletter-button {
         display: block;
-        width: 90%;
-        margin: 32px auto 16px auto;
-        padding: 10px 0;
-        border-radius: 8px;
-        background: linear-gradient(90deg, #898fc7 60%, #6972c4 100%);
-        color: #191919;
-        font-weight: 700;
-        font-size: 1.2rem;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(137, 143, 199, 0.15);
-        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-        text-align: center;
-        letter-spacing: 0.5px;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 12px 20px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .mobile-newsletter-button:hover {
         background: linear-gradient(90deg, #6972c4 60%, #898fc7 100%);
         color: #fff;
-        transform: scale(1.04);
+        transform: translateX(-50%) translateY(-50%) scale(1.04);
         box-shadow: 0 4px 16px rgba(137, 143, 199, 0.25);
     }
 
