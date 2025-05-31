@@ -5,11 +5,11 @@ const Skills = () => {
 
     const skillsData = {
         frontend: [
-            { name: 'React', icon: '../react.png', level: 75 },
+            { name: 'React', icon: '../react.webp', level: 75 },
             { name: 'JavaScript', icon: '../javascript.webp', level: 65 },
             { name: 'HTML5', icon: '../html.png', level: 90 },
             { name: 'CSS3', icon: '../css.webp', level: 85 },
-            { name: 'React Native', icon: '../react.png', level: 80 },
+            { name: 'React Native', icon: '../react.webp', level: 80 },
         ],
         backend: [
             { name: 'Node.js', icon: '../nodejs.png', level: 35 },

@@ -226,7 +226,7 @@ function MainPage() {
                                         keep a sense of purpose, or you constantly get distracted, Keystone will help you
                                         stay on track. Keystone is currently in development and will be available soon.
                                     </p>
-                                    <a href="https://thekeystoneapp.com" target="_blank" rel="noreferrer" className="company-link">
+                                    <a href="https://thekeystoneapp.com#waitlist" target="_blank" rel="noreferrer" className="company-link">
                                         <i className="fas fa-key"></i> Join Waitlist
                                     </a>
                                 </div>
