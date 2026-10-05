@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+/* Design tokens. Components use these names (bg-bg, text-gold, font-display…); no raw hex elsewhere. */
+@theme inline {
+  --color-bg: #101010;
+  --color-surface: #171715;
+  --color-surface-2: #1f1f1c;
+  --color-line: #34322c;
+  --color-text: #ede6d6;
+  --color-muted: #a9a292;
+  --color-gold: #c9a961;
+  --color-laurel: #8fb08a;
+  --color-terracotta: #d4806a;
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --text-display: clamp(2.75rem, 1.4rem + 5.4vw, 5.75rem);
+  --text-title: clamp(2rem, 1.3rem + 2.6vw, 3.25rem);
+  --text-lead: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+
+  --radius-card: 0.25rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  /* Golden-ratio (1.618) spacing steps */
+  --phi-1: 0.618rem;
+  --phi-2: 1rem;
+  --phi-3: 1.618rem;
+  --phi-4: 2.618rem;
+  --phi-5: 4.236rem;
+  --phi-6: 6.854rem;
+
+  --dur-fast: 200ms;
+  --dur-base: 400ms;
+  --dur-slow: 700ms;
+  --nav-h: 4rem;
+  --measure: 72rem;
+
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint paper grain, rasterised once as a tiled background (no per-frame filter cost). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-bg);
+}
+
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--measure));
+  margin-inline: auto;
+}
+
+/* ---------- Scroll reveals ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Scroll-drawn line art ---------- */
+.draw path,
+.draw line,
+.draw circle,
+.draw rect {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1800ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.draw[data-visible="true"] path,
+.draw[data-visible="true"] line,
+.draw[data-visible="true"] circle,
+.draw[data-visible="true"] rect {
+  stroke-dashoffset: 0;
+}
+
+/* ---------- Golden-mean slider ---------- */
+.mean-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2.75rem;
+  background: transparent;
+  cursor: grab;
+}
+.mean-range:active {
+  cursor: grabbing;
+}
+.mean-range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--color-line);
+}
+.mean-range::-moz-range-track {
+  height: 2px;
+  background: var(--color-line);
+}
+.mean-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: calc(-0.75rem + 1px);
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 1px var(--color-gold);
+}
+.mean-range::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+/* ---------- Dialog ---------- */
+dialog.project-dialog {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  padding: 0;
+  width: min(100% - 1.5rem, 46rem);
+  max-height: min(92dvh, 52rem);
+  margin: auto;
+}
+dialog.project-dialog::backdrop {
+  background: rgb(0 0 0 / 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .draw path,
+  .draw line,
+  .draw circle,
+  .draw rect {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
