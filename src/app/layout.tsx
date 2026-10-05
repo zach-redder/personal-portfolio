@@ -1,19 +1,31 @@
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import { CommandPalette } from '@/components/CommandPalette'
 import { RevealObserver } from '@/components/RevealObserver'
 import { site } from '@/content/site'
 import './globals.css'
 
-const display = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  style: ['normal', 'italic'],
+// Self-hosted (latin subset, SIL OFL; see ./fonts/LICENSE-OFL.txt) so builds never depend on Google Fonts being reachable.
+const display = localFont({
+  src: [
+    { path: './fonts/cormorant-garamond-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/cormorant-garamond-latin-500-italic.woff2', weight: '500', style: 'italic' },
+  ],
   variable: '--font-cormorant',
   display: 'swap',
 })
-const sans = Hanken_Grotesk({ subsets: ['latin'], variable: '--font-hanken', display: 'swap' })
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', display: 'swap' })
+const sans = localFont({
+  src: './fonts/hanken-grotesk-latin-wght-normal.woff2',
+  weight: '100 900',
+  variable: '--font-hanken',
+  display: 'swap',
+})
+const mono = localFont({
+  src: './fonts/jetbrains-mono-latin-wght-normal.woff2',
+  weight: '100 800',
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
